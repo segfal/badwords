@@ -1,0 +1,9 @@
+pandas
+flask
+numpy
+psaw
+praw
+requests
+datetime
+time
+json
