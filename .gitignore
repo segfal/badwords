@@ -1,0 +1,6 @@
+.vscode
+.env
+./backend/.env
+.ipynb_checkpoints
+compost.ipynb
+./backend/__pycache__
