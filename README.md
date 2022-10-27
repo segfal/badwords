@@ -8,3 +8,9 @@ pip3 install -r requirements.txt
 ```
 
 # 👷‍♂️🛠️🔧💻🚚
+
+
+run the bash script `run.sh` to run the program.
+```bash
+bash install.sh
+```
