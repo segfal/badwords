@@ -4,3 +4,8 @@
 .ipynb_checkpoints
 compost.ipynb
 ./backend/__pycache__
+/backend/sheets/*
+/backend/loading_data.py
+/backend/comments.json
+/backend/datasheets/*.json
+

@@ -43,3 +43,29 @@ class Posts:
         return True
 
 
+
+
+limit = 50000
+subreddit = "destiny"
+dt.datetime.timestamp(dt.datetime.now())
+
+
+api = PushshiftAPI()
+posts = api.search_submissions(subreddit='wall',limit=55000,start_date=int(dt.datetime(2022,10,1).timestamp()),end_date=int(dt.datetime(2022,10,26).timestamp()))
+
+def get_table(posts):
+    post_keys = ['title','selftext','created_utc','author','id','score','num_comments','permalink','url','subreddit']
+    table = []
+    for post in posts:
+        table.append({key:post[key] for key in post_keys if key in post})
+    #turn the created_utc to a date string
+    for post in table:
+        post['created_utc'] = dt.datetime.fromtimestamp(post['created_utc']).strftime("%Y-%m-%d %H:%M:%S")
+    
+    return table
+
+x = dt.datetime.now().strftime("%Y_%m_%d_%M %S")
+x = x.replace(" ","")
+with open(f'datasheets/posts{x}.json', 'w') as f:
+    json.dump(get_table(posts), f,indent=4)
+
